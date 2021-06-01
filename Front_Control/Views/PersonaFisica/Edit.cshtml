@@ -1,0 +1,50 @@
+﻿@model Front_Control.Models.PersonaFisica
+@{
+    ViewData["Title"] = "Editar Persona Fisica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Editar Persona Fisica</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10">
+            <form method="post" asp-action="Edit">
+                <div class="form-group">
+                    <label asp-for="idPersonaFisica" class="control-label">ID</label>
+                    <input asp-for="idPersonaFisica" disabled class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="nombre" class="control-label">Nombre</label>
+                    <input asp-for="nombre" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="apellidoPaterno" class="control-label">Apellido Paterno</label>
+                    <input asp-for="apellidoPaterno" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="apellidoMaterno" class="control-label">Apellido Materno</label>
+                    <input asp-for="apellidoMaterno" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="rfc" class="control-label">RFC</label>
+                    <input asp-for="rfc" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="fechaNacimiento" class="control-label">Fecha de nacimiento</label>
+                    <input asp-for="fechaNacimiento" type="datetime" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuarioAgrega" class="control-label">Usuario Agrega</label>
+                    <input asp-for="usuarioAgrega" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

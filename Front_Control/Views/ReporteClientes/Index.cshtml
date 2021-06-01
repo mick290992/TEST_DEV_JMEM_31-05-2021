@@ -1,0 +1,105 @@
+﻿@model List<Front_Control.Models.ReporteCliente>
+@{
+    ViewData["Title"] = "Reporte Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <script src="~/js/Index.js"></script>
+    <script src="~/js/FileSaver.js"></script>
+    <script src="~/js/ExcelReport.js"></script>
+
+    <link href="~/css/paginado.css" rel="stylesheet" />
+    <script src="~/js/jquery-3.3.1.js"></script>
+
+
+</head>
+
+<div class="container">
+    @if (TempData["mensaje"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @TempData["mensaje"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+    <div class="col-sm-6">
+        <h3>Lista de Clientes</h3>
+    </div>
+
+    <div class="row">
+        <table class="table table-bordered table-striped" id="TablaCliente">
+            <thead>
+                <tr>
+                    <td>ID de cliente</td>
+                    <td>Fecha registro empresa</td>
+                    <td>Razón social</td>
+                    <td>RFC</td>
+                    <td>Sucursal</td>
+                    <td>ID de empleado</td>
+                    <td>Nombre</td>
+                    <td>Apellido Paterno</td>
+                    <td>Apellido Materno</td>
+                    <td>ID Viaje</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdCliente</td>
+                        <td>@item.FechaRegistroEmpresa</td>
+                        <td>@item.RazonSocial</td>
+                        <td>@item.RFC</td>
+                        <td>@item.Sucursal</td>
+                        <td>@item.IdEmpleado</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Paterno</td>
+                        <td>@item.Materno</td>
+                        <td>@item.IdViaje</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+            <td><input type="button" id="cargar_primera_pagina" value="<< Primero" /></td>
+            <td><input type="button" id="cargar_anterior_pagina" value="< Anterior" /></td>
+            <td id="indicador_paginas"></td>
+            <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >" /></td>
+            <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>" /></td>
+            </tfoot>
+        </table>
+
+
+        @*@{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+        }
+
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex - 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @prevDisabled">
+            Previous
+        </a>
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @nextDisabled">
+            Next
+        </a>*@
+    </div>
+    <div class="col-sm-6">
+        <button class="btn btn-primary" onclick="javascript: fnExcelReport('TablaClientes', 'data')">Exportar a Excel</button>
+    </div>
+</div>
+
+<footer>
+
+</footer>
+

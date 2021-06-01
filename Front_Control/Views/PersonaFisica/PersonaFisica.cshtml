@@ -1,0 +1,71 @@
+﻿@model List<Front_Control.Models.PersonaFisica>
+
+@{
+    ViewData["Title"] = "Persona Fisica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    @if (TempData["mensaje"] != null)
+	{
+		 <div class="alert alert-warning alert-dismissible fade show" role="alert">
+             @TempData["mensaje"]
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+             </button>
+         </div>
+	}
+
+    <div class="col-sm-6">
+        <h3>Lista de personas fisicas</h3>
+    </div>
+
+    <div class="col-sm-6">
+        <a class="btn btn-primary d-block" asp-action="Create" asp-controller="PersonaFisica">Agregar Nueva Persona Fisica</a>
+    </div>
+    <br />
+    <div class="row">
+        @if(Model.Count() > 0)
+            {
+               <table class="table table-bordered table-striped">
+                   <thead>
+                       <tr>
+                           <td>ID</td>
+                           <td>Nombre</td>
+                           <td>Apellido Paterno</td>
+                           <td>Apellido Materno</td>
+                           <td>RFC</td>
+                           <td>Fecha de Nacimiento</td>
+                           <td>Usuario Agrega</td>
+                           <td>Acciones</td>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       @foreach(var item in Model)
+                {
+                       <tr>
+                           <td>@item.idPersonaFisica</td>
+                           <td>@item.nombre</td>
+                           <td>@item.apellidoPaterno</td>
+                           <td>@item.apellidoMaterno</td>
+                           <td>@item.rfc</td>
+                           <td>@item.fechaNacimiento</td>
+                           <td>@item.usuarioAgrega</td>
+                           <td>
+                               <a asp-controller="PersonaFisica" asp-action="Edit" asp-route-id=@item.idPersonaFisica class="btn btn-warning">Editar</a>
+                               <a asp-controller="PersonaFisica" asp-action="Delete" asp-route-id=@item.idPersonaFisica class="btn btn-danger">Eliminar</a>
+
+                           </td>
+                       </tr>
+                }
+                   </tbody>
+               </table> 
+            }
+            else
+            {
+                <p>No existen registros</p>
+            }
+    </div>
+</div>
+

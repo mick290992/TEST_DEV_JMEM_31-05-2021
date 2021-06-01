@@ -1,0 +1,62 @@
+﻿@model Front_Control.Models.PersonaFisica
+@{
+    ViewData["Title"] = "Crear Nueva Persona Fisica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+           <h3>Nueva Persona Fisica</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <form method="post" asp-action="Create">
+                <div class="form-group">
+                    <label asp-for="nombre" class="control-label">Nombre</label>
+                    <input asp-for="nombre" class="form-control" />
+                    <span asp-validation-for="nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="apellidoPaterno" class="control-label">Apellido Paterno</label>
+                    <input asp-for="apellidoPaterno" class="form-control" />
+                    <span asp-validation-for="apellidoPaterno" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="apellidoMaterno" class="control-label">Apellido Materno</label>
+                    <input asp-for="apellidoMaterno" class="form-control" />
+                    <span asp-validation-for="apellidoMaterno" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="rfc" class="control-label">RFC</label>
+                    <input asp-for="rfc" class="form-control" />
+                    <span asp-validation-for="rfc" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="fechaNacimiento" class="control-label">Fecha de nacimiento</label>
+                    <input asp-for="fechaNacimiento" type="datetime" class="form-control" />
+                    <span asp-validation-for="fechaNacimiento" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="usuarioAgrega" class="control-label">Usuario que agrega</label>
+                    <input asp-for="usuarioAgrega" class="form-control" />
+                    <span asp-validation-for="usuarioAgrega" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                     <input type="submit" value="Guardar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+    @{ <partial name="_ValidationScriptsPartial" />}
+}
+
