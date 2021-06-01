@@ -55,41 +55,23 @@
                 }
             </tbody>
             <tfoot>
-                <td><input type="button" id="cargar_primera_pagina" value="<< Primero" /></td>
-                <td><input type="button" id="cargar_anterior_pagina" value="< Anterior" /></td>
-                <td id="indicador_paginas"></td>
-                <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >" /></td>
-                <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>" /></td>
+            <td><input type="button" id="cargar_primera_pagina" value="<< Primero" /></td>
+            <td><input type="button" id="cargar_anterior_pagina" value="< Anterior" /></td>
+            <td id="indicador_paginas"></td>
+            <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >" /></td>
+            <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>" /></td>
             </tfoot>
         </table>
-
-
-        @*@{
-            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-        }
-
-        <a asp-action="Index"
-           asp-route-sortOrder="@ViewData["CurrentSort"]"
-           asp-route-pageNumber="@(Model.PageIndex - 1)"
-           asp-route-currentFilter="@ViewData["CurrentFilter"]"
-           class="btn btn-default @prevDisabled">
-            Previous
-        </a>
-        <a asp-action="Index"
-           asp-route-sortOrder="@ViewData["CurrentSort"]"
-           asp-route-pageNumber="@(Model.PageIndex + 1)"
-           asp-route-currentFilter="@ViewData["CurrentFilter"]"
-           class="btn btn-default @nextDisabled">
-            Next
-        </a>*@
     </div>
     <div class="col-sm-6">
-        <button class="btn btn-primary" onclick="javascript: fnExcelReport('TablaClientes', 'data')">Exportar a Excel</button>
+        <button class="btn btn-primary" onclick="javascript: fnExcelReport('TablaCliente', 'data')">Exportar a Excel</button>
     </div>
 </div>
 
-<footer>
-
-</footer>
+@section Scripts {
+    <script src="~/js/index.js"></script>
+    <script src="~/js/FileSaver.js"></script>
+    <script src="~/js/ExcelReport.js"></script>
+    <link href="~/css/paginado.css" rel="stylesheet" />
+}
 

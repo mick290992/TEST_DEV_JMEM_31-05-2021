@@ -870,6 +870,7 @@ C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Razor\Views\PersonaFisica\Create.cshtml.g.cs
+C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Razor\Views\PersonaFisica\Delete.cshtml.g.cs
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Razor\Views\PersonaFisica\Edit.cshtml.g.cs
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Razor\Views\PersonaFisica\PersonaFisica.cshtml.g.cs
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Razor\Views\ReporteClientes\Index.cshtml.g.cs
@@ -886,4 +887,3 @@ C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Front_Control.dll
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Front_Control.pdb
 C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Front_Control.genruntimeconfig.cache
-C:\Users\juanm\Documents\GitHub\TEST_DEV_JMEM_31-05-2021\Front_Control\obj\Debug\netcoreapp3.1\Razor\Views\PersonaFisica\Delete.cshtml.g.cs
