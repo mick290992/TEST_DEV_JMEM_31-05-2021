@@ -1,4 +1,5 @@
 ﻿using Front_Control.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Front_Control.Controllers
 {
-    [Authorized]
+    [Authorize]
     public class PersonaFisicaController : Controller
     {
 

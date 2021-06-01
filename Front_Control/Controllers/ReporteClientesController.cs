@@ -46,7 +46,7 @@ namespace Front_Control.Controllers
                 }
                 else
                 {
-                    return NotFound();
+                    return Forbid();
                 }
             }
             catch (Exception e)

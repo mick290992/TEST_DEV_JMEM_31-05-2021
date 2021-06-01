@@ -4,16 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<head>
-    <script src="~/js/Index.js"></script>
-    <script src="~/js/FileSaver.js"></script>
-    <script src="~/js/ExcelReport.js"></script>
-
-    <link href="~/css/paginado.css" rel="stylesheet" />
-    <script src="~/js/jquery-3.3.1.js"></script>
-
-
-</head>
 
 <div class="container">
     @if (TempData["mensaje"] != null)
@@ -65,11 +55,11 @@
                 }
             </tbody>
             <tfoot>
-            <td><input type="button" id="cargar_primera_pagina" value="<< Primero" /></td>
-            <td><input type="button" id="cargar_anterior_pagina" value="< Anterior" /></td>
-            <td id="indicador_paginas"></td>
-            <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >" /></td>
-            <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>" /></td>
+                <td><input type="button" id="cargar_primera_pagina" value="<< Primero" /></td>
+                <td><input type="button" id="cargar_anterior_pagina" value="< Anterior" /></td>
+                <td id="indicador_paginas"></td>
+                <td><input type="button" id="cargar_siguiente_pagina" value="Siguiente >" /></td>
+                <td><input type="button" id="cargar_ultima_pagina" value="Ultimo >>" /></td>
             </tfoot>
         </table>
 
