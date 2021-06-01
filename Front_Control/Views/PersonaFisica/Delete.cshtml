@@ -1,48 +1,48 @@
 ﻿@model Front_Control.Models.PersonaFisica
 @{
-    ViewData["Title"] = "Editar Persona Fisica";
+    ViewData["Title"] = "Eliminar Persona Fisica";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h3>Editar Persona Fisica</h3>
+            <h3>Eliminar Persona Fisica</h3>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-10">
-            <form method="post" asp-action="Edit">
+            <form method="post" asp-action="Delete">
                 <div class="form-group">
                     <label asp-for="idPersonaFisica" class="control-label">ID</label>
                     <input asp-for="idPersonaFisica" readonly class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="nombre" class="control-label">Nombre</label>
-                    <input asp-for="nombre" class="form-control" />
+                    <input asp-for="nombre" readonly class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="apellidoPaterno" class="control-label">Apellido Paterno</label>
-                    <input asp-for="apellidoPaterno" class="form-control" />
+                    <input asp-for="apellidoPaterno" readonly class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="apellidoMaterno" class="control-label">Apellido Materno</label>
-                    <input asp-for="apellidoMaterno" class="form-control" />
+                    <input asp-for="apellidoMaterno"readonly  class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="rfc" class="control-label">RFC</label>
-                    <input asp-for="rfc" class="form-control" />
+                    <input asp-for="rfc" readonly class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="fechaNacimiento" class="control-label">Fecha de nacimiento</label>
-                    <input asp-for="fechaNacimiento" class="form-control" />
+                    <input asp-for="fechaNacimiento" readonly class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="usuarioAgrega" class="control-label">Usuario Agrega</label>
-                    <input asp-for="usuarioAgrega" class="form-control" />
+                    <input asp-for="usuarioAgrega" readonly class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                    <input type="submit" value="Eliminar" class="btn btn-primary" />
                 </div>
             </form>
         </div>

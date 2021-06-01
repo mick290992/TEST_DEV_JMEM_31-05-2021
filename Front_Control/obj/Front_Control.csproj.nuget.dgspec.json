@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juanm\\source\\repos\\Front_Control\\Front_Control.csproj": {}
+    "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\Front_Control\\Front_Control.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juanm\\source\\repos\\Front_Control\\Front_Control.csproj": {
+    "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\Front_Control\\Front_Control.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juanm\\source\\repos\\Front_Control\\Front_Control.csproj",
+        "projectUniqueName": "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\Front_Control\\Front_Control.csproj",
         "projectName": "Front_Control",
-        "projectPath": "C:\\Users\\juanm\\source\\repos\\Front_Control\\Front_Control.csproj",
+        "projectPath": "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\Front_Control\\Front_Control.csproj",
         "packagesPath": "C:\\Users\\juanm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juanm\\source\\repos\\Front_Control\\obj\\",
+        "outputPath": "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\Front_Control\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

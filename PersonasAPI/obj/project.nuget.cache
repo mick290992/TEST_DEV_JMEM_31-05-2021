@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "02sVUo1FR+JfJdrwewRW89tiLgCHR5Zc9GtH1b3uaQlsqdZ8X+kKJc1pWOmjGONOsEAsOhZyhmEa12VCLBxJDw==",
+  "dgSpecHash": "u7gcLW7RchXBPzTRPbFMLC0pag97QdtowoIPpKriPKzwqUB4GDB+6Lf4HtVtPy6YvYohZwewwoLWcVXvKjO/Lg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\juanm\\Desktop\\PersonasAPI\\PersonasAPI.csproj",
+  "projectFilePath": "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\PersonasAPI\\PersonasAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juanm\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\juanm\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

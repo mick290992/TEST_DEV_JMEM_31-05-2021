@@ -1,6 +1,10 @@
 ﻿
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace Front_Control.Models
 {
@@ -28,4 +32,5 @@ namespace Front_Control.Models
         public string fechaNacimiento { get => FechaNacimiento; set => FechaNacimiento = value; }
         public int usuarioAgrega { get => UsuarioAgrega; set => UsuarioAgrega = value; }
     }
+
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using PersonasAPI.Models;
 using System.Data.SqlClient;
+using System;
+using System.Globalization;
 
 namespace PersonasAPI.Data
 {
@@ -114,7 +116,21 @@ namespace PersonasAPI.Data
                     cmd.Parameters.Add(new SqlParameter("@Nombre", p.nombre));
                     cmd.Parameters.Add(new SqlParameter("@ApellidoPaterno", p.apellidoPaterno));
                     cmd.Parameters.Add(new SqlParameter("@ApellidoMaterno", p.apellidoMaterno));
-                    cmd.Parameters.Add(new SqlParameter("@FechaNacimiento", p.fechaNacimiento));
+
+                    string dateString = p.fechaNacimiento;
+                    string format = "dd/MM/yyyy";
+                    DateTime dateFormated;
+                    try
+                    {
+                        dateFormated = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
+                    }
+                    catch (Exception)
+                    {
+
+                        return;
+                    }
+
+                    cmd.Parameters.Add(new SqlParameter("@FechaNacimiento", dateFormated));
                     cmd.Parameters.Add(new SqlParameter("@RFC", p.rfc));
                     cmd.Parameters.Add(new SqlParameter("@UsuarioAgrega", p.usuarioAgrega));
 

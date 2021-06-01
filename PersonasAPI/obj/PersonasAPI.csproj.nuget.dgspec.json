@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juanm\\Desktop\\PersonasAPI\\PersonasAPI.csproj": {}
+    "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\PersonasAPI\\PersonasAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juanm\\Desktop\\PersonasAPI\\PersonasAPI.csproj": {
+    "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\PersonasAPI\\PersonasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juanm\\Desktop\\PersonasAPI\\PersonasAPI.csproj",
+        "projectUniqueName": "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\PersonasAPI\\PersonasAPI.csproj",
         "projectName": "PersonasAPI",
-        "projectPath": "C:\\Users\\juanm\\Desktop\\PersonasAPI\\PersonasAPI.csproj",
+        "projectPath": "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\PersonasAPI\\PersonasAPI.csproj",
         "packagesPath": "C:\\Users\\juanm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juanm\\Desktop\\PersonasAPI\\obj\\",
+        "outputPath": "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\PersonasAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

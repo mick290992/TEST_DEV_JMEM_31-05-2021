@@ -127,26 +127,36 @@ namespace Front_Control.Controllers
             }
         }
 
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || id == 0)
             {
                 return NotFound();
             }
 
+            var persona = await Details(id);
+            return View(persona);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Delete(PersonaFisica persona)
+        {
+
             using (var httpClient = new HttpClient())
             {
                 try
                 {
-                    using (var response = await httpClient.DeleteAsync("http://localhost:1436/api/Personas/" + id))
+                    using (var response = await httpClient.DeleteAsync("http://localhost:1436/api/Personas/" + persona.idPersonaFisica))
                     {
                         string apiResponse = await response.Content.ReadAsStringAsync();
                     }
+                    TempData["mensaje"] = "Se elimino el registro";
+                    return RedirectToAction("PersonaFisica");
                 }
                 catch (Exception)
                 {
-
                     TempData["mensaje"] = "No se elimino el registro";
+                    return View();
                 }
 
             }

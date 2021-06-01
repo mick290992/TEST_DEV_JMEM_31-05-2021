@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xk0SDih+vnSYpz0dXHeOziHzRZd2GOg71h3VxmyLKkZ29Cca3fExAIUKkBITzOcPUtuIES87vcIIfaI7o0jWww==",
+  "dgSpecHash": "wHBLhiy6iya+grSBjwskpqsruKJDB5Rds/x7o/0zNIS8g5KLrEVpP/HeMRkDTiYbydJOjhatEfV/WeIa26JRxA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\juanm\\source\\repos\\Front_Control\\Front_Control.csproj",
+  "projectFilePath": "C:\\Users\\juanm\\Documents\\GitHub\\TEST_DEV_JMEM_31-05-2021\\Front_Control\\Front_Control.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juanm\\.nuget\\packages\\epplus\\5.6.4\\epplus.5.6.4.nupkg.sha512",
     "C:\\Users\\juanm\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.15\\microsoft.aspnetcore.cryptography.internal.3.1.15.nupkg.sha512",

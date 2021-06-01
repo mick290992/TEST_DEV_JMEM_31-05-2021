@@ -41,23 +41,52 @@ namespace PersonasAPI.Controllers
 
         // POST api/<PersonasController>
         [HttpPost]
-        public async Task Post([FromBody]Persona persona)
+        public async Task<ActionResult> Post([FromBody]Persona persona)
         {
-            await _repository.Insert(persona);
+            try
+            {
+                await _repository.Insert(persona);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+
+                return Problem(e.Data.ToString());
+            }
+
         }
 
         // PUT api/<PersonasController>/5
         [HttpPut]
-        public async Task Put([FromBody] Persona persona)
+        public async Task<ActionResult> Put([FromBody] Persona persona)
         {
-            await _repository.Actualizar(persona);
+            try
+            {
+                await _repository.Actualizar(persona);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+
+                return Problem(e.Data.ToString());
+            }
         }
 
         // DELETE api/<PersonasController>/5
         [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            await _repository.DeleteById(id);
+            try
+            {
+                await _repository.DeleteById(id);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+
+                return Problem(e.Data.ToString());
+            }
+
         }
     }
 }
