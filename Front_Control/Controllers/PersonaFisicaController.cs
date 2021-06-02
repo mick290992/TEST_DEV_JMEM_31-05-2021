@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -63,6 +64,10 @@ namespace Front_Control.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(PersonaFisica persona)
         {
+
+           var fecha = formatDate(persona.fechaNacimiento);
+            persona.fechaNacimiento = fecha;
+            
             string apiResponse;
             if (ModelState.IsValid)
             {
@@ -105,6 +110,8 @@ namespace Front_Control.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(PersonaFisica persona)
         {
+            var fecha = formatDate(persona.fechaNacimiento);
+            persona.fechaNacimiento = fecha;
             string apiResponse;
             try
             {
@@ -162,6 +169,24 @@ namespace Front_Control.Controllers
 
             }
             return View();
+        }
+
+        public string formatDate(string fecha)
+        {
+
+            string format = "yyyy-MM-dd";
+            DateTime dateFormated;
+            try
+            {
+                dateFormated = DateTime.ParseExact(fecha, format, CultureInfo.InvariantCulture);
+                string correctFormat = dateFormated.ToString("dd/MM/yyyy");
+                return correctFormat;
+            }
+            catch (FormatException)
+            {
+                return "01/01/2000";
+            }
+
         }
     }
 }

@@ -89,18 +89,27 @@ namespace PersonasAPI.Data
             {
                 using (SqlCommand cmd = new SqlCommand("sp_AgregarPersonaFisica", sql))
                 {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    try
+                    {
+                        DateTime fecha = formatDate(p.fechaNacimiento);
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add(new SqlParameter("@Nombre", p.nombre));
-                    cmd.Parameters.Add(new SqlParameter("@ApellidoPaterno", p.apellidoPaterno));
-                    cmd.Parameters.Add(new SqlParameter("@ApellidoMaterno", p.apellidoMaterno));
-                    cmd.Parameters.Add(new SqlParameter("@FechaNacimiento", p.fechaNacimiento));
-                    cmd.Parameters.Add(new SqlParameter("@RFC", p.rfc));
-                    cmd.Parameters.Add(new SqlParameter("@UsuarioAgrega", p.usuarioAgrega));
+                        cmd.Parameters.Add(new SqlParameter("@Nombre", p.nombre));
+                        cmd.Parameters.Add(new SqlParameter("@ApellidoPaterno", p.apellidoPaterno));
+                        cmd.Parameters.Add(new SqlParameter("@ApellidoMaterno", p.apellidoMaterno));
+                        cmd.Parameters.Add(new SqlParameter("@FechaNacimiento", fecha));
+                        cmd.Parameters.Add(new SqlParameter("@RFC", p.rfc));
+                        cmd.Parameters.Add(new SqlParameter("@UsuarioAgrega", p.usuarioAgrega));
 
-                    await sql.OpenAsync();
-                    await cmd.ExecuteNonQueryAsync();
-                    return;
+                        await sql.OpenAsync();
+                        await cmd.ExecuteNonQueryAsync();
+                        return;
+                    }
+                    catch (Exception e)
+                    {
+
+                        return;
+                    }
                 }
             }
         }
@@ -117,20 +126,9 @@ namespace PersonasAPI.Data
                     cmd.Parameters.Add(new SqlParameter("@ApellidoPaterno", p.apellidoPaterno));
                     cmd.Parameters.Add(new SqlParameter("@ApellidoMaterno", p.apellidoMaterno));
 
-                    string dateString = p.fechaNacimiento;
-                    string format = "dd/MM/yyyy";
-                    DateTime dateFormated;
-                    try
-                    {
-                        dateFormated = DateTime.ParseExact(dateString, format, CultureInfo.InvariantCulture);
-                    }
-                    catch (Exception)
-                    {
+                    DateTime fecha = formatDate(p.fechaNacimiento);
 
-                        return;
-                    }
-
-                    cmd.Parameters.Add(new SqlParameter("@FechaNacimiento", dateFormated));
+                    cmd.Parameters.Add(new SqlParameter("@FechaNacimiento", fecha));
                     cmd.Parameters.Add(new SqlParameter("@RFC", p.rfc));
                     cmd.Parameters.Add(new SqlParameter("@UsuarioAgrega", p.usuarioAgrega));
 
@@ -156,6 +154,22 @@ namespace PersonasAPI.Data
             }
         }
 
+        public DateTime formatDate(string fecha)
+        {
+            string format = "dd/MM/yyyy";
+            DateTime dateFormated;
+            try
+            {
+                dateFormated = DateTime.ParseExact(fecha, format, CultureInfo.InvariantCulture);
+                return dateFormated;
+            }
+            catch (FormatException)
+            {
+                DateTime err = DateTime.ParseExact("01/01/200", format, CultureInfo.InvariantCulture);
+                return err;
+            }
+
+        }
 
 
     }

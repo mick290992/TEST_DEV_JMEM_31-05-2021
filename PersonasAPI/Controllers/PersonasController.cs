@@ -41,18 +41,9 @@ namespace PersonasAPI.Controllers
 
         // POST api/<PersonasController>
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody]Persona persona)
+        public async Task Post([FromBody]Persona persona)
         {
-            try
-            {
-                await _repository.Insert(persona);
-                return Ok();
-            }
-            catch (Exception e)
-            {
-
-                return Problem(e.Data.ToString());
-            }
+            await _repository.Insert(persona);
 
         }
 

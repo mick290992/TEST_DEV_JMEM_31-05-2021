@@ -16,6 +16,7 @@ using Front_Control.Models;
 using Front_Control.Controllers;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
 namespace Front_Control.Areas.Identity.Pages.Account
 {
@@ -89,8 +90,7 @@ namespace Front_Control.Areas.Identity.Pages.Account
                 
                 if (result != null)
                 {
-                    TempData["token"] = result;
-
+                    HttpContext.Session.SetString("token", result);
 
                     var claims = new List<Claim>
                         {
@@ -102,7 +102,8 @@ namespace Front_Control.Areas.Identity.Pages.Account
 
                     var authProperties = new AuthenticationProperties
                     {
-                        AllowRefresh = true
+                        AllowRefresh = true,
+                        IsPersistent = true
 
                     };
 

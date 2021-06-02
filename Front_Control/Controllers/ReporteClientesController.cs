@@ -29,11 +29,9 @@ namespace Front_Control.Controllers
             ApiResponse resp = new ApiResponse();
             try
             {
-
-                if (TempData["token"] != null)
+                string token = HttpContext.Session.GetString("token");
+                if (token != null)
                 {
-
-                    string token = TempData["token"].ToString();
                     using (var httpClient = new HttpClient())
                     {
                         httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
@@ -49,18 +47,13 @@ namespace Front_Control.Controllers
                     return Forbid();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return NotFound();
             }
 
-
-            // var clientes = resp.Data.AsQueryable();
             var clientes = resp.Data;
 
-
-            int pageSize = 20;
-            //return View(await PaginatedList<ReporteCliente>.CreateAsync(clientes, pageNumber ?? 1, pageSize));
             return View(clientes);
 
         }
